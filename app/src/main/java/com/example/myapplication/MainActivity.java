@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // The following is executed whenever the button1 is clicked
                 TextView textView1 = findViewById(R.id.FirstTextView);
                 textView1.setText("HOHO");
                 Log.d("MainActivity", "A button is clicked");
