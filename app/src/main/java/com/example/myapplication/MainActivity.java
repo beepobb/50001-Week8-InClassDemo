@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +36,35 @@ public class MainActivity extends AppCompatActivity {
         // Instantiate the object, and then pass it to button.setOnClickListener
 //        Button1Class b1 = new Button1Class();
 //        button1.setOnClickListener( b1 );
+
+        Button buttonToSubactivity = findViewById(R.id.GoToSubactivityButton);
+        buttonToSubactivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                intent.putExtra("MAINACTIVITY", "Wow!");
+                startActivity(intent);
+            }
+        });
+
+        Button mapButton = findViewById(R.id.OpenMapButton);
+        mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Build the URI
+                Uri.Builder uriBuilder = new Uri.Builder();
+                uriBuilder.scheme("geo").opaquePart("0.0").appendQueryParameter("q", "SUTD");
+                Uri URL = uriBuilder.build();
+
+                // Implicit Intent
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(URL); // Set the resource
+
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     class Button1Class implements View.OnClickListener {

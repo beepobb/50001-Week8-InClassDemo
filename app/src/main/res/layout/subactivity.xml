@@ -8,44 +8,28 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/FirstTextView"
+        android:id="@+id/SubactivityFirstTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="This is Subactivity Page"
         android:gravity="center"
         />
     <TextView
-        android:id="@+id/SecondTextView"
+        android:id="@+id/SubactivitySecondTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="-"
         android:layout_gravity="center"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        />
 
     <Button
-        android:id="@+id/Button1"
+        android:id="@+id/BackToHomeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change My Text"
+        android:text="Back to Home"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/black"
         />
 
-    <Button
-        android:id="@+id/GoToSubactivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Subactivity"
-        />
-
-    <Button
-        android:id="@+id/OpenMapButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Open Map"
-        />
 
 </LinearLayout>
