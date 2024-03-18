@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,13 +11,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences mPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mPreferences = getSharedPreferences(SubActivity.sharedPrefFile, MODE_PRIVATE);
+
         Log.i("LifeCycle", "onCreate"); // Logging onCreate
+
+        String textFromSub = mPreferences.getString(SubActivity.KEY, "Default Value");
+        TextView thirdTextView = findViewById(R.id.ThirdTextView);
+        thirdTextView.setText(textFromSub);
+
 
         // Using anonymous class
         Button button1 = findViewById(R.id.Button1);
