@@ -14,4 +14,9 @@ public class ExampleUnitTest {
     public void addition_isCorrect() {
         assertEquals(4, 2 + 2);
     }
+
+    @Test
+    public void pythagoras_is_correct() {
+        assertEquals(5.0, Pythagoras.calculateHypothenuse(3,4), 1e-6);
+    }
 }
