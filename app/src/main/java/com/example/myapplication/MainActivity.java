@@ -45,13 +45,19 @@ public class MainActivity extends AppCompatActivity {
 //        button1.setOnClickListener( b1 );
 
         // Explicit Intent Demo
+        //Explicit: within same app
         Button buttonToSubactivity = findViewById(R.id.GoToSubactivityButton);
         buttonToSubactivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SubActivity.class);
+                //putExtra: add extended data to intent
+                //name: identifier for the value
+                //Example on how to retrieve data:
+                //Intent intent = getIntent();
+                //String data = intent.getStringExtra("MAINACTIVITY");
                 intent.putExtra("MAINACTIVITY", "Wow!");
-                startActivity(intent);
+                startActivity(intent); // start new activity
             }
         });
 
